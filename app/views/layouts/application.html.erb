@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Coroぷり日誌</title>
+    <title>Coroぷり日記</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <script src="https://kit.fontawesome.com/4254070997.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <header>
+    <nav class="navbar navbar-light" style="background-color: #FFCCCC">
+      <div class="container">
+        <div class="navbar-left mr-auto">
+          <nav class="navbar-brand">
+            Coroぷり日記
+          </nav>
+        </div>
+        <div class="navbar-right d-flex">
+            <ul class="navbar-nav">
+            <%if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Home', user_path(current_user.id), class: "fas fa-home nav-link mr-3" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Coroぷりさん一覧', users_path, class: "" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'CoroDiaries一覧', class: "fas fa-home nav-link mr-3" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Coroぷり日記とは", home_about_path, class: "fas fa-link nav-link mr-3" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "sign up", new_user_registration_path, class: "fas fa-edit nav-link mr-3" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "login", new_user_session_path, class: "fas fa-sign-in-alt nav-link mr-3" %>
+              </li>
+            <% end %>
+            </ul>
+        </div>
+        </div>
+      </div>
+    </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
