@@ -1,0 +1,12 @@
+<h1>新規投稿</h1>
+
+<%= form_with model: @blog do |f| %>
+  <div class="form-group"></div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, size: "80x10" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :text, size: "80x30", placeholder: "Coroぷりなこと書いてみよう♡" %>
+    <%= f.submit %>
+  </div>
+<% end %>
