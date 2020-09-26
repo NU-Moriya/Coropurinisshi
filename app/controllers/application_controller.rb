@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  
   def after_sign_up_path_for(resource)
     user_path(resource)
   end
