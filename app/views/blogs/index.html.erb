@@ -1,0 +1,23 @@
+<%= render 'users/profile', user: @user, blog: @blog %>
+<div class="col-xs-9">
+  <h2>Coroぷり日記一覧</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">title</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          
+          <td><%= blog.user.name %></td>
+          <td><%= blog.title %></td>
+          <td><%= link_to "Show", blog_path(blog) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

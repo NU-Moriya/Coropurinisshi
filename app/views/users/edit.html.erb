@@ -1,0 +1,10 @@
+<h1>My page 編集</h1>
+<%= form_with model:@user, local:true do |f| %>
+  <h2>Name</h2>
+  <%= f.text_field :name %>
+  <h2>Image</h2>
+  <%= f.attachment_field :profile_image %>
+  <h2>Introdution</h2>
+  <%= f.text_area :introduction %>
+  <%= f.submit "編集する" %>
+<% end %>

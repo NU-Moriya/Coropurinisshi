@@ -1,4 +1,23 @@
-
-
-<%= @blog.title %>
-<%= @blog.text %>
+<div class="container">
+  <div class="row">
+    <h2><%= @user.name %></h2>
+    <div class="col-xs-6 offset-xs-3">
+      <table class="table position-relative">
+          <thead>
+            <tr>
+              <th>title</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @blog.title %></td>
+              <td><%= @blog.text %></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <i class="fas fa-arrow-circle-left"></i>
+  <%= link_to "back", blogs_path %>
+</div>

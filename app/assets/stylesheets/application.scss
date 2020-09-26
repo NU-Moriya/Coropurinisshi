@@ -15,3 +15,16 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+nav ul li {
+  list-style: none;
+  float: right;
+  min-width: 100px;
+  margin: 15px;
+}
+
+
+nav ul li a:hover {
+  color: #E7DA66;
+}

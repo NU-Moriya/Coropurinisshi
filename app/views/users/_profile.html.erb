@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+      <%= link_to "New", new_blog_path, class: "fas fa-pencil-alt icon-4x" %>
+    
+      <table class="table">
+        <tr>
+          <th><%= attachment_image_tag user, :profile_image, size: "100x100", fallback: "noimage.png" %></th>
+        </tr>
+        <tr>
+          <th>name</th>
+          <th><%= user.name %></th>
+        </tr>
+        <tr>
+          <th>introduction</th>
+          <th><%= user.introduction %></th>
+        </tr>
+      </table>
+      <i class="fas fa-user-edit"></i>
+      <%= link_to 'プロフィール編集',edit_user_path(user), class: "col-xs-12 btn btn-success fas fa-user-edit edit_user_#{user.id}" %>
+    </div> 
