@@ -4,7 +4,7 @@
 
       <h1>新規投稿</h1>
 
-      <%= form_with model: @blog do |f| %>
+      <%= form_with model: @blog, local: true do |f| %>
         <div class="form-group"></div>
           <%= f.label :title %><br>
           <%= f.text_field :title, size: "70x10" %>
